@@ -10,7 +10,6 @@ app.directive('appInput', function() {
         scope: {
         	title: '@',
         	id: '@',
-        	filterData: '=',
         	filterBy: '='
         }
     };

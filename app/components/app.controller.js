@@ -1,31 +1,52 @@
 import app from '../app.module.js';
 
 const controller = [
-'appQuery',
-function(appQuery) {
-	// appQuery.universityInfo.jsonp({
-	// 	name: 'middle'
-	// }).$promise
-	// .then((data) => {
-	// 	console.log(data);
-	// }).catch(console.error);
+'$scope','filterFilter', 'appQuery', 'appUtilites',
+function($scope, filterFilter, appQuery, appUtilites) {
+	this.reqInfo = (reqParams) => {
+		const correctReqParams = appUtilites.filterObject(reqParams, (reqValue) => reqValue !== '');
+		const isParamsEmpty = appUtilites.isEmptyObject(correctReqParams);
 
-	this.data = [
-		[1, 2, 3],
-		[1, 2, 3],
-		[1, 2, 3],
-		[1, 2, 3],
-		[1, 2, 3]
-	];
+		if (isParamsEmpty) {
+			return;
+		}
+
+		appQuery.universityInfo
+				.query(correctReqParams)
+					.$promise
+					.then((data) => {
+						this.data = data;
+					}).catch(console.error);
+	}
 
 	this.header = [
 		'Name',
 		'Country',
 		'Web Page',
+		'Alpha Code',
+		'Domain',
 	];
+	
+	this.filters = {
+		// name: undefined,
+		// country: '',
+	}
 
-	this.
+	$scope.$watch('app.filters.country', (newValue, oldValue) => {
+		if (oldValue === newValue) {
+			return;
+		}
+
+		//this.filteredData = filterFilter(data, this.filters.country);
+	});
+
+	$scope.$watch('app.filters.name', (newValue, oldValue) => {
+		if (oldValue === newValue) {
+			return;
+		}
+
+		//this.filteredData = filterFilter(data, this.filters.name);
+	});
 }];
 
 app.controller('appController', controller);
-

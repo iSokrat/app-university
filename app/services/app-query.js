@@ -3,16 +3,9 @@ import app from '../app.module.js';
 const service = [
 '$resource', 
 function($resource) {
-	this.universityInfo = $resource(
-		'http://universities.hipolabs.com/search', {}, {
-			jsonp: {
-				method: 'JSONP',
-				params: {
-					callback: 'JSON_CALLBACK'
-				},
-				isArray: true
-			}
-		});
+	const url = 'http://universities.hipolabs.com/search';
+
+	this.universityInfo = $resource(url, {}, {});
 }];
 
 app.service('appQuery', service);

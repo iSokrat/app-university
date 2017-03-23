@@ -1,4 +1,5 @@
-import appService from './services/app-query.js';
+import appUtilitesService from './services/app-utilites.js';
+import appQueryService from './services/app-query.js';
 
 import appController from './components/app.controller.js';
 

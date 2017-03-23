@@ -1,7 +1,6 @@
 const appInputController = [
-'$filter', 
-function ($filter) {
-	console.log(this.filterBy);
+function () {
+	/* Nothing */
 }];
 
 export default appInputController;

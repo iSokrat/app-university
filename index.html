@@ -4,20 +4,23 @@
 	<meta charset="UTF-8">
 	<title>University list</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
+</head>	
 <body>
 	<div class="container">
 		<div ng-controller="appController as app" class="table-responsive">
 			<app-input title="Country" 
 					   id="countryFilterField" 
-					   filter-data='app.data' 
-					   filter-by='country'></app-input>
+					   filter-by="app.filters.country"></app-input>
 
 			<app-input title="University" 
 					   id="universityFilterField"
-					   filter-data='app.data' 
-					   filter-by='name'></app-input>
+					   filter-by="app.filters.name"></app-input>
 			
+			<input ng-click="app.reqInfo(app.filters)"
+				   class="btn btn-default" 
+				   type="button" 
+				   value="Search">
+
 			<app-table table-header="app.header" 
 					   table-data="app.data"></app-table>
 		</div>
