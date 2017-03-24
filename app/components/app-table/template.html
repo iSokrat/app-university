@@ -1,19 +1,19 @@
 <div class="table-responsive">
 	<table class="table table-hover table-bordered">
-	<thead>
-		<tr>
-			<th ng-repeat="headerData in tableHeader track by $index">
-				{{ ::headerData }}
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="rows in tableData track by $index">
-			<td ng-repeat="cell in rows track by $index"
-				tabindex="-1">
-				{{ cell }}
-			</td>
-		</tr>
-	</tbody>
+		<thead>
+			<tr>
+				<th ng-repeat="headerData in tableHeader track by $index">
+					{{ ::headerData }}
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="rows in tableData track by $index">
+				<td ng-repeat="cell in rows track by $index"
+					tabindex="-1">
+					{{ cell }}
+				</td>
+			</tr>
+		</tbody>
 	</table>
 </div>

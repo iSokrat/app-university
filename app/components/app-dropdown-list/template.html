@@ -2,6 +2,7 @@
 	<button ng-repeat="item in items 
 				| limitTo: list.limitRecords 
 				| unique: uniqueBy
+				| gt: 1
 			   track by $index"
 			ng-click="list.selectListItem(item[uniqueBy])"
 			type="button"

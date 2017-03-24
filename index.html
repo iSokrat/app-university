@@ -11,7 +11,7 @@
 		  class="container">
 		<div class="panel panel-default">
 			<header class="panel-heading">
-				<h4>{{ app.appName }}</h4>
+				<h3>{{ app.appName }}</h3>
 			</header>
 			
 			<div class="panel-body">
@@ -38,9 +38,27 @@
 					</div>
 				</div>
 			</div>
-
-			<app-table table-header="app.header" 
-					   table-data="app.data"></app-table>
+			
+			<div ng-switch on="app.dataState">
+				<div ng-switch-when="NO_RESULT" 
+					 class="alert alert-danger app-alert" 
+					 role="alert">
+					 	<p>
+					 		<strong>
+					 			{{ app.noResultMsg }}
+					 		</strong>
+					 	</p>
+				</div>
+				
+				<app-table ng-switch-when="FULLY"
+						   table-header="app.header"
+						   table-data="app.data"></app-table>
+				
+				<div class="alert alert-info app-alert" role="alert" ng-switch-default>
+					<h4>{{ app.welcomeMsg.header }}</h4>
+					<p>{{ app.welcomeMsg.text }}</p>
+				</div>
+			</div>
 		</div>
 		
 		<div ng-show="app.showSpinnerState"
@@ -48,8 +66,6 @@
 			<div class="cssload-whirlpool"></div>
 		</div>
 	</main>
-	
-	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js" defer></script>

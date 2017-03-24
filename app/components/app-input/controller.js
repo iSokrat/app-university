@@ -18,8 +18,8 @@ function ($scope, appQuery) {
         appQuery.reqUniversityInfo(
         	reqParam, 
         	validator, 
-        	(data) => { 
-        		this.data = data;
+        	(data) => {
+                this.data = data;
         });
     });
 }];

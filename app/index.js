@@ -1,6 +1,7 @@
 import appUtilitesService from './services/app-utilites.js';
 import appQueryService from './services/app-query.js';
 
+import gtFilter from './filters/gt.js';
 import uniqueFilter from './filters/unique.js';
 
 import appController from './components/app.controller.js';

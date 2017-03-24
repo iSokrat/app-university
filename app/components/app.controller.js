@@ -26,6 +26,7 @@ function($scope, filterFilter, appQuery) {
 			|   */
 			$scope.$apply(); 
 			
+
 			console.error(error);
 		};
 
@@ -46,12 +47,30 @@ function($scope, filterFilter, appQuery) {
 		'Domain',
 	];
 	
-	this.filters = {
-		// name
-		// country
+	this.noResultMsg = 'Results not found:( Don\'t worry! Try again;)';
+	
+	this.welcomeMsg = {
+		header: 'Welcome!',
+		text: 'It help you to find information about any university in the world!',
 	}
 
+	this.filters = {/* name, country */}
+
 	this.showSpinnerState = false;
+
+	$scope.$watch('app.data.length', (newVal, oldVal) => {
+		if (newVal === oldVal) {
+			return;
+		}
+
+		if (newVal === 0) {
+			this.dataState = 'NO_RESULT';
+		} else {
+			this.dataState = 'FULLY';
+		}
+
+		console.log("11");
+	});
 }];
 
 app.controller('appController', controller);
