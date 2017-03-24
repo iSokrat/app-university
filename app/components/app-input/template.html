@@ -7,3 +7,6 @@
 		   aria-describedby="{{title}}"
 		   ng-model="filterBy">
 </div>
+<app-dropdown-list items="input.data" 
+				   unique-by="filterName"
+				   fields="[filterName]"></app-dropdown-list>

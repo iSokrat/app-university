@@ -2,17 +2,16 @@ import app from '../../app.module.js';
 import template from './template.html';
 import controller from './controller.js';
 
-app.directive('appInput', function() {
+app.directive('appDropdownList', function() {
 	return {
 		template,
 		controller,
+		controllerAs: 'list',
         restrict: 'E',
         scope: {
-        	title: '@',
-        	id: '@',
-        	filterName: '@',
-            filterBy: '=',
+        	items: '=',
+        	fields: '=',
+        	uniqueBy: '='
         },
-        controllerAs: 'input',
     };
 });

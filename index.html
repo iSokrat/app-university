@@ -6,25 +6,28 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>	
 <body>
-	<div class="container">
-		<div ng-controller="appController as app" class="table-responsive">
+	<main class="container">
+		<div ng-controller="appController as app">
 			<app-input title="Country" 
-					   id="countryFilterField" 
-					   filter-by="app.filters.country"></app-input>
-
-			<app-input title="University" 
-					   id="universityFilterField"
-					   filter-by="app.filters.name"></app-input>
+			id="countryFilterField" 
+			filter-name="country"
+			filter-by="app.filters.country"></app-input>
 			
-			<input ng-click="app.reqInfo(app.filters)"
-				   class="btn btn-default" 
-				   type="button" 
-				   value="Search">
+			<app-input title="University" 
+			id="nameFilterField"
+			filter-name="name"
+			filter-by="app.filters.name"></app-input>
 
-			<app-table table-header="app.header" 
-					   table-data="app.data"></app-table>
+			<input ng-click="app.reqInfo(app.filters)"
+			class="btn btn-default" 
+			type="button" 
+			value="Search">
+			<div class="table-responsive">
+				<app-table table-header="app.header" 
+						   table-data="app.data"></app-table>
+			</div>
 		</div>
-	</div>
+	</main>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js" defer></script>
