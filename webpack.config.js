@@ -17,6 +17,7 @@ var config = {
     name: 'js',
     entry: [
         './app/index.js',
+        './styles/entry.scss',
     ],
     output: {
         path: path.join(__dirname, './public/dist'),

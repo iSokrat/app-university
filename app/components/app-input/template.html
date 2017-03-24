@@ -1,4 +1,4 @@
-<div class="input-group">
+<div class="input-group app-input-dropdown-list">
 	<label class="input-group-addon" for="{{id}}">{{title}}</label>
 	<input id="{{id}}" 
 		   type="text" 
@@ -6,7 +6,10 @@
 		   placeholder="{{title}}" 
 		   aria-describedby="{{title}}"
 		   ng-model="filterBy">
+	
+	<app-dropdown-list class="app-dropdown-list"
+					   items="input.data"
+					   select-target="filterBy"
+				   	   unique-by="filterName"
+				   	   visible-fields="[filterName]"></app-dropdown-list>
 </div>
-<app-dropdown-list items="input.data" 
-				   unique-by="filterName"
-				   fields="[filterName]"></app-dropdown-list>

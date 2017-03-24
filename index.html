@@ -4,33 +4,55 @@
 	<meta charset="UTF-8">
 	<title>University list</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="public/dist/app-bundle.min.css">
 </head>	
 <body>
-	<main class="container">
-		<div ng-controller="appController as app">
-			<app-input title="Country" 
-			id="countryFilterField" 
-			filter-name="country"
-			filter-by="app.filters.country"></app-input>
+	<main ng-controller="appController as app" 
+		  class="container">
+		<div class="panel panel-default">
+			<header class="panel-heading">
+				<h4>{{ app.appName }}</h4>
+			</header>
 			
-			<app-input title="University" 
-			id="nameFilterField"
-			filter-name="name"
-			filter-by="app.filters.name"></app-input>
-
-			<input ng-click="app.reqInfo(app.filters)"
-			class="btn btn-default" 
-			type="button" 
-			value="Search">
-			<div class="table-responsive">
-				<app-table table-header="app.header" 
-						   table-data="app.data"></app-table>
+			<div class="panel-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-md-8 col-sm-8">
+							<app-input title="Country" 
+										id="countryFilterField" 
+										filter-name="country"
+										filter-by="app.filters.country"></app-input>
+						
+							<app-input title="University" 
+										id="nameFilterField"
+										filter-name="name"
+										filter-by="app.filters.name"></app-input>
+						</div>
+						
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<input ng-click="app.reqInfo(app.filters)"
+								   	class="btn btn-default" 
+									type="button" 
+									value="Search">
+						</div>
+					</div>
+				</div>
 			</div>
+
+			<app-table table-header="app.header" 
+					   table-data="app.data"></app-table>
+		</div>
+		
+		<div ng-show="app.showSpinnerState"
+			 class="cssload-container">
+			<div class="cssload-whirlpool"></div>
 		</div>
 	</main>
+	
+	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js" defer></script>
-	<script src="public/dist/app-bundle.js" defer></script>
+	<script src="public/dist/app-bundle.min.js" defer></script>
 </body>
 </html>

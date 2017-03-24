@@ -1,0 +1,12 @@
+@include keyframes(cssload-rotate) {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@mixin borderRadius($radius...) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+	     -o-border-radius: $radius;
+			border-radius: $radius;
+}

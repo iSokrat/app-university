@@ -1,0 +1,30 @@
+.app-input-dropdown-list {
+	position: relative;
+
+	.app-dropdown-list {
+		position: absolute;
+		width: 100%;
+		top:30px;
+		left: 0; 
+		z-index: 1000; 
+	}
+}
+
+.block-center {
+	position: absolute;
+  	top:0;
+  	bottom: 0;
+  	left:0;
+  	right:0;
+  	margin: auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.todo-fill {
+  @extend .block-center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+

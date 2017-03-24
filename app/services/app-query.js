@@ -7,11 +7,17 @@ function($resource, appUtilites) {
 
 	this.reqUniversityInfo = reqUniversityInfo;
 
-	function reqUniversityInfo(reqParams, paramValidator, callback) {
+	function reqUniversityInfo(reqParams, paramValidator, callback, error = console.error) {
 		const correctReqParams = appUtilites.filterObject(reqParams, paramValidator);
 		const isParamsEmpty = appUtilites.isEmptyObject(correctReqParams);
 
 		if (isParamsEmpty) {
+			const errMsg = "After validation reqParams is empty.";
+			
+			Promise
+				.reject(new Error(errMsg))
+				.catch(error);
+
 			return;
 		}
 		
@@ -19,7 +25,7 @@ function($resource, appUtilites) {
 				.query(correctReqParams)
 				.$promise
 					.then(callback)
-					.catch(console.error);
+					.catch(error);
 	}
 }];
 

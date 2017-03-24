@@ -1,15 +1,14 @@
 const appInputController = [
 '$scope', 'appQuery',
 function ($scope, appQuery) {
+	$scope.$on('clearDropdown', () => {
+		this.data = null;
+	});
+
 	$scope.$watch('filterBy', (newValue, oldValue) => {
         if (newValue === oldValue) {
             return;
         }
-		
-		if (newValue === '') {
-			this.data = null;
-			return;
-		}
 
 		const validator = (reqValue) => reqValue !== '';
 		
@@ -20,8 +19,7 @@ function ($scope, appQuery) {
         	reqParam, 
         	validator, 
         	(data) => { 
-        		this.data = data; 
-        		console.log(this.data);
+        		this.data = data;
         });
     });
 }];

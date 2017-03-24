@@ -10,7 +10,8 @@ app.directive('appDropdownList', function() {
         restrict: 'E',
         scope: {
         	items: '=',
-        	fields: '=',
+            selectTarget: '=',
+        	visibleFields: '=',
         	uniqueBy: '='
         },
     };
