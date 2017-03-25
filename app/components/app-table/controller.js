@@ -1,3 +1,3 @@
-const appTableController = function () { };
+const appTableController = function () {};
 
 export default appTableController;

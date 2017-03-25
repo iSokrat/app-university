@@ -2,13 +2,13 @@
 	<table class="table table-hover table-bordered">
 		<thead>
 			<tr>
-				<th ng-repeat="headerData in tableHeader track by $index">
+				<th ng-repeat="headerData in table.tableHeader track by $index">
 					{{ ::headerData }}
 				</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="rows in tableData track by $index">
+			<tr ng-repeat="rows in table.tableData track by $index">
 				<td ng-repeat="cell in rows track by $index"
 					tabindex="-1">
 					{{ cell }}

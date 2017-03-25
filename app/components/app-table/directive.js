@@ -10,6 +10,8 @@ app.directive('appTable', function() {
         scope: {
         	tableHeader: '=',
         	tableData: '=',
-        }
+        },
+        controllerAs: 'table',
+        bindToController: true
     };
 });
