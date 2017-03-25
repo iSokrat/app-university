@@ -8,4 +8,5 @@ import appController from './components/app.controller.js';
 
 import appDropdownListDirective from './components/app-dropdown-list/directive.js';
 import appInputDirective from './components/app-input/directive.js';
+import appSwitchBtnDirective from './components/app-switch-btn/directive.js';
 import appTableDirective from './components/app-table/directive.js';
