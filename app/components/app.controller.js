@@ -68,8 +68,6 @@ function($scope, filterFilter, appQuery) {
 		} else {
 			this.dataState = 'FULLY';
 		}
-
-		console.log("11");
 	});
 }];
 
