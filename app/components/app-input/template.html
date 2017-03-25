@@ -1,15 +1,15 @@
 <div class="input-group app-input-dropdown-list">
-	<label class="input-group-addon" for="{{id}}">{{title}}</label>
-	<input id="{{id}}" 
+	<label class="input-group-addon" for="{{input.id}}">{{input.title}}</label>
+	<input id="{{input.id}}" 
 		   type="text" 
 		   class="form-control" 
-		   placeholder="{{title}}" 
-		   aria-describedby="{{title}}"
-		   ng-model="filterBy">
+		   placeholder="{{input.title}}" 
+		   aria-describedby="{{input.title}}"
+		   ng-model="input.filterBy">
 	
 	<app-dropdown-list class="app-dropdown-list"
 					   items="input.data"
-					   select-target="filterBy"
-				   	   unique-by="filterName"
-				   	   visible-fields="[filterName]"></app-dropdown-list>
+					   select-target="input.filterBy"
+				   	   unique-by="input.filterName"
+				   	   visible-fields="[input.filterName]"></app-dropdown-list>
 </div>

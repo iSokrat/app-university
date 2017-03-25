@@ -14,5 +14,6 @@ app.directive('appInput', function() {
             filterBy: '=',
         },
         controllerAs: 'input',
+        bindToController: true
     };
 });

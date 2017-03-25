@@ -1,6 +1,5 @@
 const appDropdownListController = [
-'$scope',
-function ($scope) {
+function () {
     this.limitRecords = 5;
     this.selectListItem = (info) => {
     	this.selectTarget = info;
