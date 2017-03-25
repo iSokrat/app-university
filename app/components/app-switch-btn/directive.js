@@ -10,5 +10,6 @@ app.directive('appSwitchBtn', function() {
         scope: {
         },
         controllerAs: 'btn',
+        bindToController: true,
     };
 });
