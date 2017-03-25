@@ -1,12 +1,12 @@
 <div class="list-group">
-	<button ng-repeat="item in items 
+	<button ng-repeat="item in list.items 
 				| limitTo: list.limitRecords 
-				| unique: uniqueBy
+				| unique:  list.uniqueBy
 				| gt: 1
 			   track by $index"
-			ng-click="list.selectListItem(item[uniqueBy])"
+			ng-click="list.selectListItem(item[list.uniqueBy])"
 			type="button"
 		 	class="list-group-item">
-			<strong ng-repeat="field in visibleFields">{{ item[field] }}</strong>
+			<strong ng-repeat="field in list.visibleFields">{{ item[field] }}</strong>
 	</button>
 </div>
