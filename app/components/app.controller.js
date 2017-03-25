@@ -51,7 +51,7 @@ function($scope, filterFilter, appQuery) {
 	
 	this.welcomeMsg = {
 		header: 'Welcome!',
-		text: 'It help you to find information about any university in the world!',
+		text: 'It helps you to find information about any university in the world!',
 	}
 
 	this.filters = {/* name, country */}
