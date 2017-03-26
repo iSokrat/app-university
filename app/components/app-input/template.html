@@ -1,12 +1,10 @@
-<div class="input-group app-input-dropdown-list">
-	<label class="input-group-addon" for="{{input.id}}">{{input.title}}</label>
-	<input id="{{input.id}}" 
+<div class="app-input-dropdown-list">
+	<input ng-model="input.filterBy"
+		   id="{{input.id}}" 
 		   type="text" 
 		   class="form-control" 
 		   placeholder="{{input.title}}" 
-		   aria-describedby="{{input.title}}"
-		   ng-model="input.filterBy">
-	
+		   aria-describedby="{{input.title}}">	
 	<app-dropdown-list ng-show="input.data"
 					   class="app-dropdown-list"
 					   items="input.data"
