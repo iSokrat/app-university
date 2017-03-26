@@ -1,10 +1,11 @@
 const appInputController = [
 '$scope', 'appQuery',
 function ($scope, appQuery) {
-	$scope.$on('clearDropdown', () => {
-		this.data = null;
-	});
+	this.clearDropdown = () => {
+        this.data = null;
+    }
 
+    $scope.$on('clearDropdown', this.clearDropdown);
 	$scope.$watch('input.filterBy', (newValue, oldValue) => {
         if (newValue === oldValue) {
             return;
