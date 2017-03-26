@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>University list</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="public/dist/app-bundle.css">
+	<link rel="stylesheet" href="public/dist/app-bundle.min.css">
 </head>	
 <body>
 	<main ng-controller="appController as app" 
@@ -52,7 +52,8 @@
 				
 				<app-table ng-switch-when="FULLY"
 						   table-header="app.header"
-						   table-data="app.data"></app-table>
+						   table-data="app.data"
+						   default-sort-property="app.defaultSortProperty"></app-table>
 				
 				<div class="alert alert-info app-alert" role="alert" ng-switch-default>
 					<h4>{{ app.welcomeMsg.header }}</h4>
@@ -69,6 +70,6 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js" defer></script>
-	<script src="public/dist/app-bundle.js" defer></script>
+	<script src="public/dist/app-bundle.min.js" defer></script>
 </body>
 </html>

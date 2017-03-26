@@ -2,8 +2,13 @@
 	<table class="table table-hover table-bordered">
 		<thead>
 			<tr>
-				<th ng-repeat="headerData in table.tableHeader track by $index">
-					{{ ::headerData }}
+				<th ng-repeat="(headerProp, headerValue) in table.tableHeader track by $index" 
+					class="col-lg-2 col-md-2 col-sm-2 col-xsm-2">
+					<a href="#" ng-click="table.sortBy(headerProp)">{{ ::headerValue }}</a>
+					<app-switch-btn ng-show="table.currentSortPropName == headerProp"
+									switch-state="table.sortState"
+									class-on="glyphicon glyphicon-sort-by-attributes-alt"
+									class-off="glyphicon glyphicon-sort-by-attributes"></app-switch-btn>
 				</th>
 			</tr>
 		</thead>

@@ -10,8 +10,9 @@ app.directive('appTable', function() {
         scope: {
         	tableHeader: '=',
         	tableData: '=',
+            defaultSortProperty: '='
         },
         controllerAs: 'table',
-        bindToController: true
+        bindToController: true,
     };
 });
