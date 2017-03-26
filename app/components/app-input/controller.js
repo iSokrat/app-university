@@ -5,7 +5,7 @@ function ($scope, appQuery) {
 		this.data = null;
 	});
 
-	$scope.$watch('filterBy', (newValue, oldValue) => {
+	$scope.$watch('input.filterBy', (newValue, oldValue) => {
         if (newValue === oldValue) {
             return;
         }
@@ -13,7 +13,7 @@ function ($scope, appQuery) {
 		const validator = (reqValue) => reqValue !== '';
 		
 		const reqParam = {};
-		reqParam[$scope.filterName] = newValue;
+		reqParam[this.filterName] = newValue;
 
         appQuery.reqUniversityInfo(
         	reqParam, 

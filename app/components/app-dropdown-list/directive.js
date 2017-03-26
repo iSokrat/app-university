@@ -7,12 +7,13 @@ app.directive('appDropdownList', function() {
 		template,
 		controller,
 		controllerAs: 'list',
+        bindToController: true,
         restrict: 'E',
         scope: {
         	items: '=',
             selectTarget: '=',
         	visibleFields: '=',
         	uniqueBy: '='
-        },
+        }
     };
 });

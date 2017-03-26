@@ -25,8 +25,6 @@ function($scope, filterFilter, appQuery) {
 			|	 |
 			|   */
 			$scope.$apply(); 
-			
-
 			console.error(error);
 		};
 
@@ -39,23 +37,20 @@ function($scope, filterFilter, appQuery) {
 	};
 
 	this.appName = 'University app';
-	this.header = [
-		'Name',
-		'Country',
-		'Web Page',
-		'Alpha Code',
-		'Domain',
-	];
-	
+	this.defaultSortProperty = 'name';
+	this.header = {
+		name: 'Name',
+		country: 'Country',
+		web_page: 'Web Page',
+		alpha_two_code: 'Alpha Code',
+		domain: 'Domain',
+	}
 	this.noResultMsg = 'Results not found:( Don\'t worry! Try again;)';
-	
 	this.welcomeMsg = {
 		header: 'Welcome!',
-		text: 'It help you to find information about any university in the world!',
+		text: 'It helps you to find information about any university in the world!',
 	}
-
 	this.filters = {/* name, country */}
-
 	this.showSpinnerState = false;
 
 	$scope.$watch('app.data.length', (newVal, oldVal) => {
@@ -68,8 +63,6 @@ function($scope, filterFilter, appQuery) {
 		} else {
 			this.dataState = 'FULLY';
 		}
-
-		console.log("11");
 	});
 }];
 
